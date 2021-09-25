@@ -18,6 +18,7 @@ def pytorch2onnx(args):
         dummy_model_input = Variable(torch.randn(*args.model_input_shapes))
     else:
         for shape in args.model_input_shapes:
+            shape = int(shape)
             dummy_model_input.append(Variable(torch.randn(*shape)))
 
     # load the PyTorch model
