@@ -29,15 +29,11 @@ def pytorch2onnx(args):
     if args.model_input_shapes == None:
         raise ValueError("Please provide --model_input_shapes to convert Pytorch models.")
     dummy_model_input = []
-    print(args.model_input_shapes)
     if len(args.model_input_shapes) == 1:
         dummy_model_input = Variable(torch.randn(*args.model_input_shapes))
     else:
         for shape in args.model_input_shapes:
-            print('************* \n')
-            print(shape)
-            print(shape.type)
-            dummy_model_input.append(Variable(torch.randn(shape)))
+            dummy_model_input.append(Variable(torch.randn(*shape)))
 
     # load the PyTorch model
     model = torch.load(args.model, map_location="cpu")
@@ -61,6 +57,7 @@ if __name__ == '__main__':
     parser.add_argument(
         "--model_input_shapes",
         required=False,
+        type=shape_type,
         help=
         "Required for Pytorch models. List of tuples. The input shape(s) of the model. Each dimension separated by ','."
     )
