@@ -1,5 +1,20 @@
 import argparse
 
+def shape_type(s):
+    import ast
+    if s == None or len(s) == 0:
+        return
+    try:
+        shapes_list = list(ast.literal_eval(s))
+        if isinstance(shapes_list[0], tuple) == False:
+            # Nest the shapes list to make it a list of tuples
+            return [tuple(shapes_list)]
+        return shapes_list
+    except:
+        raise argparse.ArgumentTypeError(
+            "Model input shapes must be a list of tuple. Each dimension separated by ','. ")
+
+
 def pytorch2onnx(args):
     # PyTorch exports to ONNX without the need for an external converter
     import torch
