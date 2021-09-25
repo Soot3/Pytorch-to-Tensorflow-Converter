@@ -42,7 +42,6 @@ if __name__ == '__main__':
     parser.add_argument(
         "--model_input_shapes",
         required=False,
-        type=shape_type,
         help=
         "Required for Pytorch models. List of tuples. The input shape(s) of the model. Each dimension separated by ','."
     )
