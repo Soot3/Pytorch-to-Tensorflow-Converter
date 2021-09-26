@@ -39,5 +39,5 @@ python ./Pytorch-to-Tensorflow-Converter/src/pytorch2tensorflow.py --model <mode
 **Example**
 
 ```
-!python ./Pytorch-to-Tensorflow-Converter/src/pytorch2tensorflow.py --model ./potato.pth --output_onnx_path ./middle.onnx --model_output_path ./final --model_input_shapes 1,3,128,128
+python ./Pytorch-to-Tensorflow-Converter/src/pytorch2tensorflow.py --model ./potato.pth --output_onnx_path ./middle.onnx --model_output_path ./final --model_input_shapes 1,3,128,128
 ```
