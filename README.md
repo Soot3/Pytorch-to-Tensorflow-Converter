@@ -22,7 +22,7 @@ docker run -v sootersaalu/pyt_tf_convert --model <model_path> --output_onnx_path
 docker run -v sootersaalu/pyt_tf_convert --model ./potato.pth --output_onnx_path ./middle.onnx --model_output_path ./final --model_input_shapes 1,3,128,128
 ```
 
-Python Steps
+### Python Steps
 
 First clone this repo
 
